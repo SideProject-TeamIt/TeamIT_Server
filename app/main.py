@@ -1,5 +1,4 @@
 # fastapi 초기세팅
-
 from fastapi import FastAPI
 
 app = FastAPI()
