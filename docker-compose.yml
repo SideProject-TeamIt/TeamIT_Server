@@ -5,53 +5,65 @@ services:
     build: ./api-gateway
     container_name: api-gateway
     ports:
-      - "8000:8000"  # 외부 → 내부
+      - "8000:8000"
     depends_on:
       - auth-service
       - user-service
       - team-service
       - project-service
       - notification-service
+    volumes:
+      - ./shared:/shared
     networks:
       - app-network
 
   auth-service:
-    build: auth-service
+    build: ./auth-service
     container_name: auth-service
     ports:
       - "8001:8000"
+    volumes:
+      - ./shared:/shared
     networks:
       - app-network
 
   user-service:
-    build: user-service
+    build: ./user-service
     container_name: user-service
     ports:
       - "8002:8000"
+    volumes:
+      - ./shared:/shared
     networks:
       - app-network
 
   team-service:
-    build: team-service
+    build: ./team-service
     container_name: team-service
     ports:
       - "8003:8000"
+    volumes:
+      - ./shared:/shared
     networks:
       - app-network
 
   project-service:
-    build: project-service
+    build: ./project-service
     container_name: project-service
     ports:
       - "8004:8000"
+    volumes:
+      - ./shared:/shared
     networks:
       - app-network
 
   notification-service:
-    build: notification-service
+    build: ./notification-service
     container_name: notification-service
     ports:
       - "8005:8000"
+    volumes:
+      - ./shared:/shared
     networks:
       - app-network
 
