@@ -1,0 +1,15 @@
+services:
+  auth-service:
+    command: ["pytest", "tests/"]
+
+  notification-service:
+    command: ["pytest", "tests/"]
+
+  project-service:
+    command: ["pytest", "tests/"]
+
+  user-service:
+    command: ["pytest", "tests/"]
+
+  team-service:
+    command: ["pytest", "tests/"]

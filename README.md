@@ -31,3 +31,21 @@ TeamIT_Server/
 ├── Makefile (명령어 관리)
 └── README.md (프로젝트 문서)
 ```
+
+
+## Docker 실행 명령어
+
+### 전체 테스트 
+```bash
+docker compose up --build
+```
+
+### 개별 서비스 테스트
+```bash
+docker compose up --build <서비스명>
+```
+
+### 운영 서버 실행
+```bash
+docker compose -f docker-compose.yml up
+```
