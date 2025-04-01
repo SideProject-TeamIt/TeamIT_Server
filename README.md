@@ -59,5 +59,14 @@ docker compose -f docker-compose.yml up
 | team-service        | 8003  | http://localhost:8003         |
 | project-service     | 8004  | http://localhost:8004         |
 | notification-service | 8005  | http://localhost:8005         |
-```
+
+## 서비스 별 데이터베이스
+| 서비스명            | DB       | 
+|---------------------|----------|
+| auth-service        | postgres |
+| user-service        | postgres |
+| team-service        | mongodb  |
+| project-service     | mongodb  |
+| notification-service | mongodb  |
+
 
