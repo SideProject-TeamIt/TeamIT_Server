@@ -49,3 +49,15 @@ docker compose up --build <서비스명>
 ```bash
 docker compose -f docker-compose.yml up
 ```
+
+## 포트별 실행 주소
+| 서비스명            | 포트  | 주소                          |
+|---------------------|-------|-------------------------------|
+| api-gateway         | 8000  | http://localhost:8000         |
+| auth-service        | 8001  | http://localhost:8001         |
+| user-service        | 8002  | http://localhost:8002         |
+| team-service        | 8003  | http://localhost:8003         |
+| project-service     | 8004  | http://localhost:8004         |
+| notification-service | 8005  | http://localhost:8005         |
+```
+
