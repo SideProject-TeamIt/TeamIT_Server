@@ -1,0 +1,113 @@
+version: '3.9'
+
+services:
+  api-gateway:
+    build: ./api-gateway
+    container_name: api-gateway
+    ports:
+      - "8000:8000"
+    depends_on:
+      - auth-service
+      - user-service
+      - team-service
+      - project-service
+      - notification-service
+    volumes:
+      - ./shared:/shared
+    networks:
+      - app-network
+
+  auth-service:
+    build: ./auth-service
+    env_file: ./auth-service/.env
+    container_name: auth-service
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./shared:/shared
+    networks:
+      - app-network
+    depends_on:
+      - postgres
+
+  user-service:
+    build: ./user-service
+    env_file: ./user-service/.env
+    container_name: user-service
+    ports:
+      - "8002:8000"
+    volumes:
+      - ./shared:/shared
+    networks:
+      - app-network
+    depends_on:
+      - postgres
+
+  team-service:
+    build: ./team-service
+    env_file: ./team-service/.env
+    container_name: team-service
+    ports:
+      - "8003:8000"
+    volumes:
+      - ./shared:/shared
+    networks:
+      - app-network
+    depends_on:
+      - mongodb
+
+  project-service:
+    build: ./project-service
+    env_file: ./project-service/.env
+    container_name: project-service
+    ports:
+      - "8004:8000"
+    volumes:
+      - ./shared:/shared
+    networks:
+      - app-network
+    depends_on:
+      - mongodb
+
+  notification-service:
+    build: ./notification-service
+    env_file: ./notification-service/.env
+    container_name: notification-service
+    ports:
+      - "8005:8000"
+    volumes:
+      - ./shared:/shared
+    networks:
+      - app-network
+    depends_on:
+      - mongodb
+
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    env_file: ./init/postgres.env  # 모든 DB 초기화용 계정 정보만 포함
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - app-network
+
+  mongodb:
+    image: mongo:6
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
+  mongo_data:
+
+networks:
+  app-network:
+    driver: bridge

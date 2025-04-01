@@ -9,6 +9,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # 앱 모듈 복사
 COPY app ./app
+COPY tests ./tests
 
 # 환경변수 (필요 시)
 ENV PYTHONPATH="${PYTHONPATH}:/shared"
