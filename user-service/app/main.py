@@ -1,7 +1,8 @@
-from fastapi import FastAPI
+from shared.config.base_config import BaseConfig
+from shared.database.postgres import get_postgres_engine, get_postgres_session
 
-app = FastAPI()
+# 환경변수 기반 URL
+DATABASE_URL = BaseConfig.get_postgres_url()
 
-@app.get("/")
-def read_root():
-    return {"message": "여기는 user_service 페이지입니다"}
+engine = get_postgres_engine(DATABASE_URL)
+SessionLocal = get_postgres_session(engine)

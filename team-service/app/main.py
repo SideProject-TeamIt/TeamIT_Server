@@ -1,7 +1,6 @@
-from fastapi import FastAPI
+from shared.config.base_config import BaseConfig
+from shared.database.mongo import get_mongo_client
 
-app = FastAPI()
-
-@app.get("/")
-def read_root():
-    return {"message": "여기는 team_service 페이지입니다"}
+mongo_uri = BaseConfig.get_mongo_uri()
+client = get_mongo_client(mongo_uri)
+db = client[BaseConfig.MONGO_DB]
