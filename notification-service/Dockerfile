@@ -1,17 +1,19 @@
 FROM python:3.11-slim
 
-# 작업 디렉토리 설정
 WORKDIR /app
 
-# 의존성 설치
-COPY requirements.txt .
+
+COPY shared ./shared
+RUN pip install --upgrade pip && pip install -e ./shared
+
+# 서비스 의존성
+COPY notification-service/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 앱 모듈 복사
-COPY app ./app
-COPY tests ./tests
-# 환경변수 (필요 시)
-ENV PYTHONPATH="${PYTHONPATH}:/shared"
+# 서비스 코드 복사
+COPY notification-service/app ./app
+COPY notification-service/tests ./tests
 
-# FastAPI 실행
+ENV PYTHONPATH="${PYTHONPATH}:/app"
+
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -3,7 +3,7 @@ from app.main import app
 
 client = TestClient(app)
 
-def test_health_check():
-    res = client.get("/")
-    assert res.status_code == 200
-    assert res.json() == {"message": "여기는 team_service 페이지입니다"}
+def test_healthcheck():
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.json() == {"status": "ok"}
