@@ -5,33 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bcb1dd5-8573-42b1-a27c-0a2eaf3212b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/base/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/build-base-image.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/database/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/utils/env_validator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/app/router/gateway_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/app/router/gateway_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/app/router/auth_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/app/router/auth_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/app/router/notification_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/app/router/notification_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-service/app/router/project_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/app/router/project_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/database/mongo.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared/database/mongo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/shared/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/team-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/team-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/team-service/app/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/team-service/app/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/team-service/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/team-service/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/team-service/app/router/team_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/team-service/app/router/team_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/app/router/user_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/app/router/user_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +65,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.sync",
+    "settings.editor.selected.configurable": "ml.llm.LLMConfigurable",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -122,11 +98,36 @@
       <recent name="$PROJECT_DIR$/services/user-service/app" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="TeamIT_Server" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PY-243.26053.29" />
-        <option value="bundled-python-sdk-b1dbf8ef85a6-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.26053.29" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PY-251.23774.444" />
+        <option value="bundled-python-sdk-890ed5b35930-d9c5bdb153f4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.23774.444" />
       </set>
     </attachedChunks>
   </component>
@@ -153,6 +154,8 @@
       <workItem from="1743849786606" duration="4970000" />
       <workItem from="1744035291965" duration="20775000" />
       <workItem from="1745254888281" duration="3784000" />
+      <workItem from="1745260113260" duration="27000" />
+      <workItem from="1745260147066" duration="975000" />
     </task>
     <servers />
   </component>
