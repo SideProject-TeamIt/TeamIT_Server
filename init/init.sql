@@ -1,6 +1,0 @@
-CREATE DATABASE auth_db;
-CREATE DATABASE user_db;
-
-CREATE ROLE teamit_user WITH LOGIN PASSWORD 'teamit_pass123';
-GRANT ALL PRIVILEGES ON DATABASE auth_db TO teamit_user;
-GRANT ALL PRIVILEGES ON DATABASE user_db TO teamit_user;
