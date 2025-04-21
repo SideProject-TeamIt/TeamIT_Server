@@ -56,3 +56,8 @@ async def route_request(service_name: str, path: str, request: Request):
         raise HTTPException(status_code=504, detail="Service request timed out")
     except httpx.RequestError as e:
         raise HTTPException(status_code=502, detail=f"Error communicating with service: {str(e)}")
+
+
+@router.get("/health")
+def health_check():
+    return {"status": "healthy", "service": "서비스명"}

@@ -2,132 +2,180 @@ version: '3.9'
 
 services:
   api-gateway:
-    build:
-      context: .
-      dockerfile: api-gateway/Dockerfile
+    build: ./api-gateway
     container_name: api-gateway
     ports:
       - "8000:8000"
     depends_on:
-      - auth-service
-      - user-service
-      - team-service
-      - project-service
-      - notification-service
+      auth-service:
+        condition: service_healthy
+      user-service:
+        condition: service_healthy
+      team-service:
+        condition: service_healthy
+      project-service:
+        condition: service_healthy
+      notification-service:
+        condition: service_healthy
+    volumes:
+      - ./shared:/shared
     networks:
-      - app-network
-    env_file:
-      - .env
+      - frontend-network
+      - backend-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
 
   auth-service:
-    build:
-      context: .
-      dockerfile: auth-service/Dockerfile
+    build: ./auth-service
+    env_file: ./auth-service/.env
     container_name: auth-service
     ports:
       - "8001:8000"
+    volumes:
+      - ./shared:/shared
     networks:
-      - app-network
+      - backend-network
+      - database-network
     depends_on:
-      - postgres
-    env_file:
-      - .env
-      - ./auth-service/.env
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
 
   user-service:
-    build:
-      context: .
-      dockerfile: user-service/Dockerfile
+    build: ./user-service
+    env_file: ./user-service/.env
     container_name: user-service
     ports:
       - "8002:8000"
+    volumes:
+      - ./shared:/shared
     networks:
-      - app-network
+      - backend-network
+      - database-network
     depends_on:
-      - postgres
-    env_file:
-      - .env
-      - ./user-service/.env
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
 
   team-service:
-    build:
-      context: .
-      dockerfile: team-service/Dockerfile
+    build: ./team-service
+    env_file: ./team-service/.env
     container_name: team-service
     ports:
       - "8003:8000"
+    volumes:
+      - ./shared:/shared
     networks:
-      - app-network
+      - backend-network
+      - database-network
     depends_on:
-      - mongodb
-    env_file:
-      - .env
-      - ./team-service/.env
+      mongodb:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
 
   project-service:
-    build:
-      context: .
-      dockerfile: project-service/Dockerfile
+    build: ./project-service
+    env_file: ./project-service/.env
     container_name: project-service
     ports:
       - "8004:8000"
+    volumes:
+      - ./shared:/shared
     networks:
-      - app-network
+      - backend-network
+      - database-network
     depends_on:
-      - mongodb
-    env_file:
-      - .env
-      - ./project-service/.env
+      mongodb:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
 
   notification-service:
-    build:
-      context: .
-      dockerfile: notification-service/Dockerfile
+    build: ./notification-service
+    env_file: ./notification-service/.env
     container_name: notification-service
     ports:
       - "8005:8000"
+    volumes:
+      - ./shared:/shared
     networks:
-      - app-network
+      - backend-network
+      - database-network
     depends_on:
-      - mongodb
-    env_file:
-      - .env
-      - ./notification-service/.env
+      mongodb:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
 
   postgres:
     image: postgres:15
     container_name: postgres
+    env_file: .env
     ports:
       - "5432:5432"
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./init/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
-      - app-network
-    env_file:
-      - .env
+      - database-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U teamit_user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
 
   mongodb:
     image: mongo:6
     container_name: mongodb
-    command: mongod --quiet --logpath /dev/null
     ports:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
     networks:
-      - app-network
-    env_file:
-      - .env
+      - database-network
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
 
 volumes:
   postgres_data:
   mongo_data:
 
 networks:
-  app-network:
+  frontend-network:
+    driver: bridge
+  backend-network:
+    driver: bridge
+  database-network:
     driver: bridge

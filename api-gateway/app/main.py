@@ -1,14 +1,17 @@
 from fastapi import FastAPI
-from .routers import gateway_router
+from fastapi.middleware.cors import CORSMiddleware
+from .router.gateway_router import gateway_router
 import logging
 
-# 로깅 설정
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-)
-
 app = FastAPI(title="TeamIT API Gateway")
+
+# CORS 설정
+app.add_middleware(CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def read_root():
@@ -16,7 +19,7 @@ def read_root():
 
 @app.get("/health")
 def health_check():
-    return {"status": "healthy"}
+    return {"status": "healthy", "service": "api-gateway"}
 
-# 게이트웨이 라우터 등록
-app.include_router(gateway_router.router)
+# v1 API 라우터 등록
+app.include_router(gateway_router.router, prefix="/v1")
