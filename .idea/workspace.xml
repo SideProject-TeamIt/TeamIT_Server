@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8bcb1dd5-8573-42b1-a27c-0a2eaf3212b1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/base/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/build-base-image.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/database/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/utils/env_validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/app/router/gateway_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/app/router/gateway_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/app/router/auth_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/app/router/auth_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/app/router/notification_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/app/router/notification_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-service/app/router/project_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/project-service/app/router/project_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/database/mongo.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared/database/mongo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/shared/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/team-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/team-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/team-service/app/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/team-service/app/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/team-service/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/team-service/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/team-service/app/router/team_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/team-service/app/router/team_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/app/router/user_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/app/router/user_router.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;hhee4455&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SideProject-TeamIt/TeamIT_Server.git&quot;,
+    &quot;accountId&quot;: &quot;495a5b13-2969-4dd4-8510-7b23392c075b&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/app/config/config.py" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2uTgnemU68Ft3Urhr2rJ1YopoK5" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showScratchesAndConsoles" value="false" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Python.TeamIT.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Refactor/0422/Settings__update",
+    "last_opened_file_path": "/Users/hhee4455/Documents/GitHub/TeamIT_Server/user-service/tests",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.sync",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="TeamIT_Server" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="TeamIT_Server" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/user-service/tests" />
+      <recent name="$PROJECT_DIR$/team-service/tests" />
+      <recent name="$PROJECT_DIR$/project-service/tests" />
+      <recent name="$PROJECT_DIR$/notification-service/tests" />
+      <recent name="$PROJECT_DIR$/user-service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/init" />
+      <recent name="$PROJECT_DIR$/shared/config" />
+      <recent name="$PROJECT_DIR$/api-gateway/app" />
+      <recent name="$PROJECT_DIR$/services/user-service/app" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PY-243.26053.29" />
+        <option value="bundled-python-sdk-b1dbf8ef85a6-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.26053.29" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8bcb1dd5-8573-42b1-a27c-0a2eaf3212b1" name="Changes" comment="" />
+      <created>1742278147541</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742278147541</updated>
+      <workItem from="1742278148801" duration="371000" />
+      <workItem from="1742278531588" duration="4134000" />
+      <workItem from="1742286624657" duration="87000" />
+      <workItem from="1742286717327" duration="1551000" />
+      <workItem from="1742975893210" duration="40000" />
+      <workItem from="1742975954444" duration="3076000" />
+      <workItem from="1743229041143" duration="887000" />
+      <workItem from="1743410960998" duration="8349000" />
+      <workItem from="1743422963581" duration="12162000" />
+      <workItem from="1743466426664" duration="6855000" />
+      <workItem from="1743496554234" duration="619000" />
+      <workItem from="1743714763940" duration="10473000" />
+      <workItem from="1743849786606" duration="4970000" />
+      <workItem from="1744035291965" duration="20775000" />
+      <workItem from="1745254888281" duration="3784000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TeamIT_Server$TeamIT.coverage" NAME="TeamIT Coverage Results" MODIFIED="1742279581717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+</project>
