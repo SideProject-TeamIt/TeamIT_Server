@@ -2,22 +2,20 @@ import os
 import sys
 
 from fastapi import FastAPI
-from app.router.team_router import router as team_router
+from app.router.team_router import router
 
 from shared.config.settings import get_settings
 from shared.config.base_config import BaseConfig
 from shared.database.mongo import get_mongo_client
+from shared.utils.env_validator import validate_required_env_vars, get_postgres_required_vars
 
 app = FastAPI()
-app.include_router(team_router)
+app.include_router(router)
 
+# MongoDB 연결 설정
 mongo_uri = BaseConfig.get_mongo_uri()
 client = get_mongo_client(mongo_uri)
 db = client[BaseConfig.MONGO_DB]
 
 # 환경 변수 검증
-required_vars = ["MONGO_URI", "MONGO_DB"]
-missing_vars = [var for var in required_vars if not os.getenv(var)]
-if missing_vars:
-    print(f"Error: Missing required environment variables: {', '.join(missing_vars)}")
-    sys.exit(1)
+validate_required_env_vars(get_postgres_required_vars(), "team-service")

@@ -60,4 +60,4 @@ async def route_request(service_name: str, path: str, request: Request):
 
 @router.get("/health")
 def health_check():
-    return {"status": "healthy", "service": "서비스명"}
+    return {"status": "ok"}

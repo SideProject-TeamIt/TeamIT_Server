@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .router.gateway_router import gateway_router
+from .router.gateway_router import router
 import logging
 
 app = FastAPI(title="TeamIT API Gateway")
@@ -22,4 +22,4 @@ def health_check():
     return {"status": "healthy", "service": "api-gateway"}
 
 # v1 API 라우터 등록
-app.include_router(gateway_router.router, prefix="/v1")
+app.include_router(router, prefix="/v1")  # gateway_router.router에서 router로 변경

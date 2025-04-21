@@ -1,12 +1,20 @@
 version: '3.9'
 
 services:
+  base-image:
+    build:
+      context: .
+      dockerfile: docker/base/Dockerfile
+    image: teamit/base:latest
+
   api-gateway:
     build: ./api-gateway
     container_name: api-gateway
     ports:
       - "8000:8000"
     depends_on:
+      base-image:
+        condition: service_completed_successfully
       auth-service:
         condition: service_healthy
       user-service:
@@ -35,14 +43,16 @@ services:
     container_name: auth-service
     ports:
       - "8001:8000"
+    depends_on:
+      base-image:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
     volumes:
       - ./shared:/shared
     networks:
       - backend-network
       - database-network
-    depends_on:
-      postgres:
-        condition: service_healthy
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 30s
@@ -56,14 +66,16 @@ services:
     container_name: user-service
     ports:
       - "8002:8000"
+    depends_on:
+      base-image:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
     volumes:
       - ./shared:/shared
     networks:
       - backend-network
       - database-network
-    depends_on:
-      postgres:
-        condition: service_healthy
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 30s
@@ -77,14 +89,16 @@ services:
     container_name: team-service
     ports:
       - "8003:8000"
+    depends_on:
+      base-image:
+        condition: service_completed_successfully
+      mongodb:
+        condition: service_healthy
     volumes:
       - ./shared:/shared
     networks:
       - backend-network
       - database-network
-    depends_on:
-      mongodb:
-        condition: service_healthy
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 30s
@@ -98,14 +112,16 @@ services:
     container_name: project-service
     ports:
       - "8004:8000"
+    depends_on:
+      base-image:
+        condition: service_completed_successfully
+      mongodb:
+        condition: service_healthy
     volumes:
       - ./shared:/shared
     networks:
       - backend-network
       - database-network
-    depends_on:
-      mongodb:
-        condition: service_healthy
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 30s
@@ -119,14 +135,16 @@ services:
     container_name: notification-service
     ports:
       - "8005:8000"
+    depends_on:
+      base-image:
+        condition: service_completed_successfully
+      mongodb:
+        condition: service_healthy
     volumes:
       - ./shared:/shared
     networks:
       - backend-network
       - database-network
-    depends_on:
-      mongodb:
-        condition: service_healthy
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 30s
