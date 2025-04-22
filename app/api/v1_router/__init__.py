@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from . import user_router, project_router, team_router, auth_router, notification_router, file_router
+from . import user_router, project_router, team_router, auth_router, notification_router, file_router, comment_router
 
 router = APIRouter()
 # Include all routers
@@ -9,3 +9,4 @@ router.include_router(team_router.router, prefix="/team", tags=["Team"])
 router.include_router(auth_router.router, prefix="/auth", tags=["AUTH"])
 router.include_router(notification_router.router, prefix="/notification", tags=["Notification"])
 router.include_router(file_router.router, prefix="/file", tags=["File"])
+router.include_router(comment_router.router, prefix="/comment", tags=["Comment"])
