@@ -41,7 +41,6 @@ venv.bak/
 .settings/
 
 # FastAPI/백엔드 관련
-.env.dev
 !.env.prod
 *.db
 *.sqlite3
@@ -72,5 +71,4 @@ alembic/versions/*.py
 
 # 로그 파일
 logs/
-*.log
 .idea/workspace.xml
