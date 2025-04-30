@@ -16,6 +16,7 @@ class BaseConfig(BaseSettings):
 
     # JWT
     JWT_SECRET_KEY: str
+    JWT_EXPIRE_MINUTES : int = 60 * 24 * 7
     ALGORITHM: str = "HS256"
 
     # GOOGLE
