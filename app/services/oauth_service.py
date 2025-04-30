@@ -1,10 +1,11 @@
 from fastapi import Request, HTTPException
 from starlette.responses import RedirectResponse, JSONResponse
 from app.client.oauth.google import GoogleOAuthClient
+from app.client.oauth.kakao import KakaoOAuthClient
 
 CLIENT_MAP = {
     "google": GoogleOAuthClient(),
-    # "kakao": KakaoOAuthClient(),
+    "kakao": KakaoOAuthClient(),
     # "github": GithubOAuthClient(),
 }
 

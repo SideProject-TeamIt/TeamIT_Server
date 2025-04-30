@@ -26,6 +26,7 @@ class BaseConfig(BaseSettings):
     # KAKAO
     KAKAO_CLIENT_ID: str
     KAKAO_CLIENT_SECRET: str
+    KAKAO_REDIRECT_URI: str
 
     # GITHUB
     GITHUB_CLIENT_ID: str
