@@ -17,7 +17,7 @@ def create_login_response(user_id: str) -> RedirectResponse:
     jwt_token = create_jwt_token(user_id)
 
     response = RedirectResponse(
-        url="http://localhost:3000",
+        url=settings.FRONTEND_URL,
         status_code=302
     )
     response.set_cookie(
