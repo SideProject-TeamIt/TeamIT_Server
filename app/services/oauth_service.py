@@ -2,11 +2,12 @@ from fastapi import Request, HTTPException
 from starlette.responses import RedirectResponse, JSONResponse
 from app.client.oauth.google import GoogleOAuthClient
 from app.client.oauth.kakao import KakaoOAuthClient
+from app.client.oauth.github import GithubOAuthClient
 
 CLIENT_MAP = {
     "google": GoogleOAuthClient(),
     "kakao": KakaoOAuthClient(),
-    # "github": GithubOAuthClient(),
+    "github": GithubOAuthClient(),
 }
 
 async def get_redirect_url(provider: str) -> RedirectResponse:
